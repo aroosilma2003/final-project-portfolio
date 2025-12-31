@@ -181,7 +181,25 @@ function add3DTilt(selector) {
     });
 }
 
-add3DTilt('.project-card, .skill, .education-card, .hero-about, .cert-card');
+add3DTilt('.project-card, .skill, .education-card, .hero-about, .cert-card, .training-card');
+
+// Practical Training Section Animation
+const trainingSection = document.getElementById('practical-training');
+if (trainingSection) {
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }
+        });
+    }, { threshold: 0.2 });
+    
+    trainingSection.style.opacity = '0';
+    trainingSection.style.transform = 'translateY(20px)';
+    trainingSection.style.transition = 'opacity 0.8s ease-out, transform 0.8s ease-out';
+    observer.observe(trainingSection);
+}
 
 // Canvas Background Animation
 const canvas = document.getElementById('hero-canvas');
