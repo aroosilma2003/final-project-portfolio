@@ -11,6 +11,7 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <div id="scroll-progress"></div>
@@ -39,95 +40,103 @@
         <section class="hero" id="hero">
             <canvas id="hero-canvas" aria-hidden="true"></canvas>
             <div class="hero-content container">
-                <div class="profile-section">
-                    <img src="./IMG/my.png" alt="Issathul Ilma" class="profile-photo">
-                    <div class="hero-text">
+                <div class="hero-grid">
+                    <div class="hero-profile">
+                        <img src="./IMG/my.png" alt="Issathul Ilma" class="profile-photo">
                         <h1 class="name hero-animate delay-1">Issathul Ilma</h1>
                         <p class="tagline hero-animate delay-2">Biomedical Technology Student<br>Gampaha Wickramarachchi University of Indigenous Medicine</p>
-                        <p class="hero-animate delay-2" style="color: var(--accent); font-weight: 500; margin-bottom: 0.5rem;"><span id="typing-text"></span></p>
-                        <p class="hero-animate delay-2" style="color: var(--muted); margin-bottom: 1rem;">"Biomedical Technology student passionate about medical devices and healthcare technology."</p>
+                        <p class="hero-animate delay-2" style="color: var(--accent); font-weight: 500; margin-bottom: 1.5rem;"><span id="typing-text"></span></p>
+                        <div class="cta-row hero-animate delay-3">
+                            <a class="btn btn-primary" href="cv.html" target="_blank">Download CV</a>
+                            <a class="btn btn-outline" href="#contact">Contact Me</a>
+                        </div>
+                    </div>
+                    <div class="hero-about hero-animate delay-3" id="about">
+                        <h2 style="text-align: left; margin-bottom: 1.5rem; font-size: 1.8rem;">About Me</h2>
+                        <p class="about-text" style="margin: 0 0 20px 0;">As a Biomedical Technology undergraduate at Gampaha Wickramarachchi University of Indigenous Medicine, I am dedicated to bridging the gap between traditional medicine and modern biomedical innovation. My academic focus centers on medical instrumentation, biosignal processing, and diagnostic technologies.</p>
+                        <div class="about-highlight">
+                            <p style="margin-bottom: 8px;"><strong>Core Focus:</strong> Medical Device Innovation • Healthcare Technology • Diagnostic Instrumentation</p>
+                            <p><strong>Professional Objective:</strong> Clinical Engineering, Biomedical Research, & Industrial Applications</p>
+                        </div>
                     </div>
                 </div>
-                <p class="cta-row hero-animate delay-3">
-                    <a class="btn btn-primary" href="cv.html" target="_blank">Download CV</a>
-                    <a class="btn btn-outline" href="#contact">Contact Me</a>
-                </p>
             </div>
         </section>
-
+        
         <section id="projects" class="projects container">
             <h2>Selected Projects</h2>
             <div id="projects-grid" class="projects-grid" aria-live="polite">
                 <div class="project-card">
-                    <img src="https://placehold.co/600x400/0b1220/4caf50?text=Circuit+Design" alt="Biomedical Instrumentation" class="project-thumb">
+                    <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=600&q=80" alt="Biomedical Instrumentation" class="project-thumb">
                     <div class="project-title">Biomedical Instrumentation Prototype</div>
                     <p class="project-desc">Designed a basic circuit for signal amplification and processing using operational amplifiers.</p>
                     <p style="font-size: 0.9rem; color: var(--primary); margin-top: 10px;"><strong>Tools:</strong> Circuit Design, Oscilloscope, Multisim</p>
                 </div>
                 <div class="project-card">
-                    <img src="https://placehold.co/600x400/0b1220/4caf50?text=Patient+System" alt="Patient Record System" class="project-thumb">
+                    <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=600&q=80" alt="Patient Record System" class="project-thumb">
                     <div class="project-title">Patient Record System</div>
                     <p class="project-desc">Developed a simple web interface to input and retrieve patient health records securely.</p>
                     <p style="font-size: 0.9rem; color: var(--primary); margin-top: 10px;"><strong>Tools:</strong> HTML, CSS, JavaScript</p>
                 </div>
             </div>
         </section>
-
+<br>
+<br>
         <section id="skills" class="skills container scroll-reveal">
             <h2>Skills</h2>
             <div class="skills-grid" style="grid-template-columns: 1fr 1fr;">
                 <div class="skill">
                     <h3 class="skill-name" style="color: var(--primary);">Medical & Biomedical</h3>
-                    <ul style="list-style: none; padding: 0; color: var(--muted);">
-                        <li>✅ Medical Instrumentation & Sensors</li>
-                        <li>✅ Biosignal Processing (ECG, EEG)</li>
-                        <li>✅ Patient Monitoring Systems</li>
-                        <li>✅ Medical Imaging Basics</li>
-                        <li>✅ Laboratory Equipment Handling</li>
-                        <li>✅ Calibration & Safety Standards</li>
-                    </ul>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Medical Instrumentation & Sensors</span>
+                        <span class="skill-tag">Biosignal Processing (ECG, EEG)</span>
+                        <span class="skill-tag">Patient Monitoring Systems</span>
+                        <span class="skill-tag">Medical Imaging Basics</span>
+                        <span class="skill-tag">Laboratory Equipment Handling</span>
+                        <span class="skill-tag">Calibration & Safety Standards</span>
+                    </div>
                 </div>
                 <div class="skill">
                     <h3 class="skill-name" style="color: var(--primary);">Technical & Engineering</h3>
-                    <ul style="list-style: none; padding: 0; color: var(--muted);">
-                        <li>💻 Circuit Design & PCB Layout</li>
-                        <li>💻 Microcontrollers (Arduino)</li>
-                        <li>💻 MS Office</li>
-                        <li>💻 Data Recording & Reporting</li>
-                        <li>💻 Web Basics (HTML, CSS, JS)</li>
-                        <li>💻 Equipment Troubleshooting</li>
-                    </ul>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Circuit Design & PCB Layout</span>
+                        <span class="skill-tag">Microcontrollers (Arduino)</span>
+                        <span class="skill-tag">MS Office</span>
+                        <span class="skill-tag">Data Recording & Reporting</span>
+                        <span class="skill-tag">Web Basics (HTML, CSS, JS)</span>
+                        <span class="skill-tag">Equipment Troubleshooting</span>
+                    </div>
                 </div>
             </div>
         </section>
-
-        <section id="about" class="about container scroll-reveal">
-            <h2>About</h2>
-            <p class="about-text">I am an undergraduate student at Gampaha Wickramarachchi University of Indigenous Medicine, pursuing a degree in Biomedical Technology. I'm deeply passionate about integrating traditional medicine with modern biomedical innovations to improve patient care and diagnostics. Throughout my academic journey, I've developed skills in medical instrumentation, biosignal processing, and laboratory techniques. I'm enthusiastic about contributing to the field through research, practical projects, and interdisciplinary collaboration—striving to make a meaningful impact in healthcare through technology.</p>
-            <div style="margin-top: 20px; color: var(--muted);">
-                <p><strong>Interest Areas:</strong> Medical devices, Healthcare technology, Lab instruments / diagnostics</p>
-                <p><strong>Career Goal:</strong> Hospital / Research / Industry</p>
-            </div>
-        </section>
-
+<br>
+<br>
         <section id="education" class="education container scroll-reveal">
             <h2>Education</h2>
-            <div class="education-text">
-                <h3>BSc (Hons) in Biomedical Technology</h3>
-                <p>Gampaha Wickramarachchi University of Indigenous Medicine</p>
-                <p><em>Duration: 4 Years – Present | Status: Undergraduate (2nd year Ongoing)</em></p>
-                <p><strong>Relevant Subjects:</strong></p>
-                <ul style="padding-left: 20px;">
-                    <li>Human Anatomy & Physiology</li>
-                    <li>Medical Instrumentation</li>
-                    <li>Biomedical Electronics</li>
-                    <li>Imaging Systems</li>
-                    <li>Clinical Engineering basics</li>
-                </ul>
+            <div class="education-card">
+                <div class="edu-header">
+                    <div>
+                        <h3>BSc (Hons) in Biomedical Technology</h3>
+                        <p class="institution">Gampaha Wickramarachchi University of Indigenous Medicine</p>
+                    </div>
+                    <span class="edu-year">2023 – Present</span>
+                </div>
+                <p class="edu-status">Undergraduate (2nd Year Ongoing)</p>
+                <div class="edu-modules">
+                    <span class="module-label">Core Modules:</span>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Human Anatomy & Physiology</span>
+                        <span class="skill-tag">Medical Instrumentation</span>
+                        <span class="skill-tag">Biomedical Electronics</span>
+                        <span class="skill-tag">Imaging Systems</span>
+                        <span class="skill-tag">Clinical Engineering Basics</span>
+                    </div>
+                </div>
             </div>
         </section>
-
-        <section id="training" class="container scroll-reveal" style="padding: 28px 0;">
+<br>
+<br>
+        <section id="training" class="container scroll-reveal">
             <h2>Practical Training</h2>
             <div class="skill">
                 <h3 class="skill-name">Nawaloka Hospital Colombo</h3>
@@ -139,8 +148,9 @@
                 </ul>
             </div>
         </section>
-
-        <section id="certifications" class="container scroll-reveal" style="padding: 28px 0;">
+<br>
+<br>
+        <section id="certifications" class="container scroll-reveal">
             <h2>Certifications & Workshops</h2>
             <ul style="color: var(--muted); padding-left: 20px;">
                 <li>Biomedical Workshops</li>
@@ -149,20 +159,23 @@
                 <li>Online Certifications (Web Development)</li>
             </ul>
         </section>
-
-        <section id="soft-skills" class="container scroll-reveal" style="padding: 28px 0;">
+<br>
+<br>
+        <section id="soft-skills" class="container scroll-reveal">
             <h2>Soft Skills</h2>
-            <p style="color: var(--muted);">🗣️ Communication (English, Tamil, Sinhala) • 🤝 Teamwork (Social Services) • 👁️ Attention to Detail • 🛡️ Patient Safety Awareness • ⏳ Time Management</p>
+            <div class="skill-tags" style="justify-content: center;">
+                <span class="skill-tag">Communication (English, Tamil, Sinhala)</span>
+                <span class="skill-tag">Teamwork (Social Services)</span>
+                <span class="skill-tag">Attention to Detail</span>
+                <span class="skill-tag">Patient Safety Awareness</span>
+                <span class="skill-tag">Time Management</span>
+            </div>
         </section>
-
+<br>
+<br>
         <section id="contact" class="contact container scroll-reveal">
             <h2>Contact</h2>
-            <div class="contact-info-display">
-                <p>📧 <a href="mailto:issathulilma4@gmail.com">issathulilma4@gmail.com</a></p>
-                <p>📞 <a href="tel:+94769473921">+94 76 947 3921</a></p>
-                <p>🔗 <a href="https://linkedin.com/in/issathul-ilma" target="_blank">LinkedIn Profile</a></p>
-                <p>📍 Gampaha, Sri Lanka</p>
-            </div>
+            
             <form class="contact-form">
                 <div class="form-group">
                     <label for="name">Name</label>
@@ -193,11 +206,21 @@
 
     <footer>
         <div class="container">
+            <div class="footer-socials">
+                <a href="https://linkedin.com/in/issathul-ilma" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="mailto:issathulilma4@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+            </div>
+            <div class="footer-contact">
+                <span><i class="fas fa-envelope"></i> issathulilma4@gmail.com</span>
+                <span><i class="fas fa-phone"></i> +94 76 947 3921</span>
+                <span><i class="fas fa-map-marker-alt"></i> Gampaha, Sri Lanka</span>
+            </div>
             <p>&copy; 2025 Issathul Ilma | Biomedical Technology</p>
         </div>
     </footer>
 
-    <script src="main.js"></script>
+    <script src="ilma.js"></script>
    
 </body>
 </html>

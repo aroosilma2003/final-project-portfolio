@@ -7,6 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:ital@0;1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
             --primary: #2c3e50;
@@ -26,6 +27,11 @@
             margin: 0;
             padding: 40px 20px;
             -webkit-print-color-adjust: exact;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
         }
 
         .cv-paper {
@@ -68,7 +74,19 @@
             color: var(--text-light);
         }
         
+        .contact-details a:hover {
+            color: var(--accent);
+            text-decoration: underline;
+        }
+
         .contact-details p { margin: 2px 0; }
+
+        .contact-details i {
+            width: 20px;
+            color: var(--primary);
+            text-align: center;
+            margin-right: 5px;
+        }
 
         /* Sections */
         .cv-section { margin-bottom: 35px; }
@@ -99,6 +117,11 @@
             font-size: 1.1rem;
             color: var(--primary);
             font-weight: 600;
+            transition: color 0.2s;
+        }
+        
+        .cv-item:hover h3 {
+            color: var(--accent);
         }
         
         .cv-item .date {
@@ -147,9 +170,15 @@
             background: #f8fafc;
             border: 1px solid #e2e8f0;
             padding: 4px 10px;
-            border-radius: 4px;
+            border-radius: 2px;
             font-size: 0.85rem;
             color: #475569;
+            transition: all 0.2s ease;
+        }
+
+        .tag:hover {
+            background: #e2e8f0;
+            border-color: #cbd5e1;
         }
 
         /* Print Button */
@@ -205,17 +234,17 @@
                 <p class="role">Biomedical Technology Student</p>
             </div>
             <div class="contact-details">
-                <p>issathulilma4@gmail.com</p>
-                <p>+94 76 947 3921</p>
-                <p>linkedin.com/in/issathul-ilma</p>
-                <p>Gampaha, Sri Lanka</p>
+                <p><i class="fas fa-envelope"></i> <a href="mailto:issathulilma4@gmail.com">issathulilma4@gmail.com</a></p>
+                <p><i class="fas fa-phone"></i> <a href="tel:+94769473921">+94 76 947 3921</a></p>
+                <p><i class="fab fa-linkedin"></i> <a href="https://linkedin.com/in/issathul-ilma" target="_blank">linkedin.com/in/issathul-ilma</a></p>
+                <p><i class="fas fa-map-marker-alt"></i> Gampaha, Sri Lanka</p>
             </div>
         </header>
 
         <section class="cv-section">
             <div class="section-title">Profile</div>
             <p>I am an undergraduate student at Gampaha Wickramarachchi University of Indigenous Medicine, pursuing a degree in Biomedical Technology. I’m deeply passionate about integrating traditional medicine with modern biomedical innovations to improve patient care and diagnostics. Throughout my academic journey, I’ve developed skills in medical instrumentation, biosignal processing, and laboratory techniques. I’m enthusiastic about contributing to the field through research, practical projects, and interdisciplinary collaboration—striving to make a meaningful impact in healthcare through technology.</p>
-            <p style="margin-top: 10px;"><strong>Interests:</strong> Medical devices, Healthcare technology, Lab instruments / diagnostics</p>
+            <p style="margin-top: 10px;"><strong>Interests:</strong> Medical Devices, Healthcare Technology, Lab Instruments & Diagnostics</p>
         </section>
 
         <section class="cv-section">
@@ -223,7 +252,7 @@
             <div class="cv-item">
                 <div class="cv-item-header">
                     <h3>BSc (Hons) in Biomedical Technology</h3>
-                    <span class="date">4 Year – Present</span>
+                    <span class="date">2023 – Present</span>
                 </div>
                 <span class="subtitle">Gampaha Wickramarachchi University of Indigenous Medicine</span>
                 <p class="date">Undergraduate (2nd year Ongoing)</p>
@@ -232,7 +261,7 @@
                     <li>Medical Instrumentation</li>
                     <li>Biomedical Electronics</li>
                     <li>Imaging Systems</li>
-                    <li>Clinical Engineering basics</li>
+                    <li>Clinical Engineering Basics</li>
                 </ul>
             </div>
         </section>
