@@ -63,7 +63,7 @@
             </div>
         </section>
         
-        <section id="projects" class="projects container">
+        <section id="projects" class="projects container scroll-reveal">
             <h2>Selected Projects</h2>
             <div id="projects-grid" class="projects-grid" aria-live="polite">
                 <div class="project-card">
@@ -152,12 +152,24 @@
 <br>
         <section id="certifications" class="container scroll-reveal">
             <h2>Certifications & Workshops</h2>
-            <ul style="color: var(--muted); padding-left: 20px;">
-                <li>Biomedical Workshops</li>
-                <li>Safety Training</li>
-                <li>Medical Equipment Handling Courses</li>
-                <li>Online Certifications (Web Development)</li>
-            </ul>
+            <div class="cert-grid">
+                <div class="cert-card">
+                    <i class="fas fa-microscope cert-icon"></i>
+                    <span>Biomedical Workshops</span>
+                </div>
+                <div class="cert-card">
+                    <i class="fas fa-shield-alt cert-icon"></i>
+                    <span>Safety Training</span>
+                </div>
+                <div class="cert-card">
+                    <i class="fas fa-tools cert-icon"></i>
+                    <span>Medical Equipment Handling</span>
+                </div>
+                <div class="cert-card">
+                    <i class="fas fa-laptop-code cert-icon"></i>
+                    <span>Web Development (Online)</span>
+                </div>
+            </div>
         </section>
 <br>
 <br>
@@ -189,7 +201,7 @@
                     <label for="message">Message</label>
                     <textarea id="message" name="message" rows="5" required></textarea>
                 </div>
-                <button type="submit" class="btn btn-primary">Send Message</button>
+                <button type="submit" class="btn btn-primary">Send Message <i class="fas fa-paper-plane" style="margin-left: 8px;"></i></button>
             </form>
         </section>
 
@@ -220,6 +232,7 @@
         </div>
     </footer>
 
+    <div id="cursor-glow"></div>
     <script src="ilma.js"></script>
    
 </body>

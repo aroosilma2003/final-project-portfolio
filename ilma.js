@@ -181,13 +181,27 @@ function add3DTilt(selector) {
     });
 }
 
-add3DTilt('.project-card, .skill, .education-card, .hero-about');
+add3DTilt('.project-card, .skill, .education-card, .hero-about, .cert-card');
 
 // Canvas Background Animation
 const canvas = document.getElementById('hero-canvas');
 if (canvas) {
     const ctx = canvas.getContext('2d');
     let particles = [];
+    let mouse = { x: null, y: null, radius: 150 };
+    let time = 0;
+
+    // Track mouse position
+    window.addEventListener('mousemove', (e) => {
+        const rect = canvas.getBoundingClientRect();
+        mouse.x = e.clientX - rect.left;
+        mouse.y = e.clientY - rect.top;
+    });
+    
+    window.addEventListener('mouseleave', () => {
+        mouse.x = null;
+        mouse.y = null;
+    });
     
     function resizeCanvas() {
         canvas.width = canvas.offsetWidth;
@@ -197,55 +211,71 @@ if (canvas) {
     
     function initParticles() {
         particles = [];
-        // 3D Sphere Configuration
-        const particleCount = 300;
-        const radius = Math.min(canvas.width, canvas.height) / 3;
+        const particleCount = Math.floor((canvas.width * canvas.height) / 9000);
         
         for (let i = 0; i < particleCount; i++) {
-            // Spherical coordinates
-            const theta = Math.random() * 2 * Math.PI;
-            const phi = Math.acos((Math.random() * 2) - 1);
-            
             particles.push({
-                x: radius * Math.sin(phi) * Math.cos(theta),
-                y: radius * Math.sin(phi) * Math.sin(theta),
-                z: radius * Math.cos(phi),
-                size: Math.random() * 2 + 0.5,
-                color: `rgba(76, 175, 80, ${Math.random() * 0.4 + 0.2})`
+                x: Math.random() * canvas.width,
+                y: Math.random() * canvas.height,
+                vx: (Math.random() - 0.5) * 0.5,
+                vy: (Math.random() - 0.5) * 0.5,
+                size: Math.random() * 2 + 1,
+                baseSize: Math.random() * 2 + 1,
+                pulseSpeed: Math.random() * 0.05 + 0.02,
+                pulseOffset: Math.random() * Math.PI * 2,
+                color: `rgba(76, 175, 80, ${Math.random() * 0.2 + 0.1})`
             });
         }
     }
     
-    let angleY = 0;
-    let angleX = 0;
-
     function animateParticles() {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
+        time += 1;
         
-        const cx = canvas.width / 2;
-        const cy = canvas.height / 2;
-        angleY += 0.002;
-        angleX += 0.001;
+        particles.forEach((p, index) => {
+            p.x += p.vx;
+            p.y += p.vy;
 
-        particles.forEach(particle => {
-            // Rotate around Y axis
-            let x = particle.x * Math.cos(angleY) - particle.z * Math.sin(angleY);
-            let z = particle.z * Math.cos(angleY) + particle.x * Math.sin(angleY);
-            
-            // Rotate around X axis
-            let y = particle.y * Math.cos(angleX) - z * Math.sin(angleX);
-            z = y * Math.sin(angleX) + z * Math.cos(angleX);
+            // Breathing Effect
+            p.size = p.baseSize + Math.sin(time * p.pulseSpeed + p.pulseOffset) * 0.5;
 
-            // 3D Projection
-            const scale = 400 / (400 + z); // Perspective projection
-            const x2d = x * scale + cx;
-            const y2d = y * scale + cy;
-            const size = particle.size * scale;
-            
+            // Mouse interaction (Attract)
+            if (mouse.x != null) {
+                const dx = mouse.x - p.x;
+                const dy = mouse.y - p.y;
+                const distance = Math.sqrt(dx * dx + dy * dy);
+                if (distance < 200) {
+                    const force = (200 - distance) / 200;
+                    p.x += (dx / distance) * force * 1.0;
+                    p.y += (dy / distance) * force * 1.0;
+                }
+            }
+
+            // Bounce off edges
+            if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
+            if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
+
             ctx.beginPath();
-            ctx.arc(x2d, y2d, size, 0, Math.PI * 2);
-            ctx.fillStyle = particle.color;
+            ctx.arc(p.x, p.y, Math.max(0.1, p.size), 0, Math.PI * 2);
+            ctx.fillStyle = p.color;
             ctx.fill();
+            
+            // Draw connections
+            for (let j = index + 1; j < particles.length; j++) {
+                const p2 = particles[j];
+                const dx = p.x - p2.x;
+                const dy = p.y - p2.y;
+                const distance = Math.sqrt(dx * dx + dy * dy);
+                
+                if (distance < 120) {
+                    ctx.beginPath();
+                    ctx.strokeStyle = `rgba(76, 175, 80, ${0.15 * (1 - distance / 120)})`;
+                    ctx.lineWidth = 0.5;
+                    ctx.moveTo(p.x, p.y);
+                    ctx.lineTo(p2.x, p2.y);
+                    ctx.stroke();
+                }
+            }
         });
         
         requestAnimationFrame(animateParticles);
@@ -255,4 +285,13 @@ if (canvas) {
     window.addEventListener('resize', resizeCanvas);
     resizeCanvas();
     animateParticles();
+}
+
+// Cursor Glow Follower
+const cursorGlow = document.getElementById('cursor-glow');
+if (cursorGlow) {
+    document.addEventListener('mousemove', (e) => {
+        cursorGlow.style.left = e.clientX + 'px';
+        cursorGlow.style.top = e.clientY + 'px';
+    });
 }
