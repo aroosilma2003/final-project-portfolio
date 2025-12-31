@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Portfolio — Issathul Ilma</title>
+    <link rel="stylesheet" href="ilma.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+</head>
+<body>
+    <div id="scroll-progress"></div>
+    <header>
+        <div class="container header-inner">
+            <div class="brand">
+                <a href="#hero">Issathul Ilma</a>
+                <p class="role">Biomedical Technology Student</p>
+            </div>
+            <nav class="nav" id="main-nav">
+                <a href="#hero">Home</a>
+                <a href="#projects">Projects</a>
+                <a href="#skills">Skills</a>
+                <a href="#about">About</a>
+                <a href="#education">Education</a>
+                <a href="#contact">Contact</a>
+            </nav>
+            <div class="header-controls">
+                <button id="theme-toggle" aria-label="Toggle dark mode"><span class="theme-icon">🌙</span></button>
+                <button id="menu-toggle" class="mobile-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero" id="hero">
+            <canvas id="hero-canvas" aria-hidden="true"></canvas>
+            <div class="hero-content container">
+                <div class="profile-section">
+                    <img src="./IMG/my.png" alt="Issathul Ilma" class="profile-photo">
+                    <div class="hero-text">
+                        <h1 class="name hero-animate delay-1">Issathul Ilma</h1>
+                        <p class="tagline hero-animate delay-2">Biomedical Technology Student<br>Gampaha Wickramarachchi University of Indigenous Medicine</p>
+                        <p class="hero-animate delay-2" style="color: var(--accent); font-weight: 500; margin-bottom: 0.5rem;"><span id="typing-text"></span></p>
+                        <p class="hero-animate delay-2" style="color: var(--muted); margin-bottom: 1rem;">"Biomedical Technology student passionate about medical devices and healthcare technology."</p>
+                    </div>
+                </div>
+                <p class="cta-row hero-animate delay-3">
+                    <a class="btn btn-primary" href="cv.html" target="_blank">Download CV</a>
+                    <a class="btn btn-outline" href="#contact">Contact Me</a>
+                </p>
+            </div>
+        </section>
+
+        <section id="projects" class="projects container">
+            <h2>Selected Projects</h2>
+            <div id="projects-grid" class="projects-grid" aria-live="polite">
+                <div class="project-card">
+                    <img src="https://placehold.co/600x400/0b1220/4caf50?text=Circuit+Design" alt="Biomedical Instrumentation" class="project-thumb">
+                    <div class="project-title">Biomedical Instrumentation Prototype</div>
+                    <p class="project-desc">Designed a basic circuit for signal amplification and processing using operational amplifiers.</p>
+                    <p style="font-size: 0.9rem; color: var(--primary); margin-top: 10px;"><strong>Tools:</strong> Circuit Design, Oscilloscope, Multisim</p>
+                </div>
+                <div class="project-card">
+                    <img src="https://placehold.co/600x400/0b1220/4caf50?text=Patient+System" alt="Patient Record System" class="project-thumb">
+                    <div class="project-title">Patient Record System</div>
+                    <p class="project-desc">Developed a simple web interface to input and retrieve patient health records securely.</p>
+                    <p style="font-size: 0.9rem; color: var(--primary); margin-top: 10px;"><strong>Tools:</strong> HTML, CSS, JavaScript</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="skills container scroll-reveal">
+            <h2>Skills</h2>
+            <div class="skills-grid" style="grid-template-columns: 1fr 1fr;">
+                <div class="skill">
+                    <h3 class="skill-name" style="color: var(--primary);">Medical & Biomedical</h3>
+                    <ul style="list-style: none; padding: 0; color: var(--muted);">
+                        <li>✅ Medical Instrumentation & Sensors</li>
+                        <li>✅ Biosignal Processing (ECG, EEG)</li>
+                        <li>✅ Patient Monitoring Systems</li>
+                        <li>✅ Medical Imaging Basics</li>
+                        <li>✅ Laboratory Equipment Handling</li>
+                        <li>✅ Calibration & Safety Standards</li>
+                    </ul>
+                </div>
+                <div class="skill">
+                    <h3 class="skill-name" style="color: var(--primary);">Technical & Engineering</h3>
+                    <ul style="list-style: none; padding: 0; color: var(--muted);">
+                        <li>💻 Circuit Design & PCB Layout</li>
+                        <li>💻 Microcontrollers (Arduino)</li>
+                        <li>💻 MS Office</li>
+                        <li>💻 Data Recording & Reporting</li>
+                        <li>💻 Web Basics (HTML, CSS, JS)</li>
+                        <li>💻 Equipment Troubleshooting</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="about container scroll-reveal">
+            <h2>About</h2>
+            <p class="about-text">I am an undergraduate student at Gampaha Wickramarachchi University of Indigenous Medicine, pursuing a degree in Biomedical Technology. I'm deeply passionate about integrating traditional medicine with modern biomedical innovations to improve patient care and diagnostics. Throughout my academic journey, I've developed skills in medical instrumentation, biosignal processing, and laboratory techniques. I'm enthusiastic about contributing to the field through research, practical projects, and interdisciplinary collaboration—striving to make a meaningful impact in healthcare through technology.</p>
+            <div style="margin-top: 20px; color: var(--muted);">
+                <p><strong>Interest Areas:</strong> Medical devices, Healthcare technology, Lab instruments / diagnostics</p>
+                <p><strong>Career Goal:</strong> Hospital / Research / Industry</p>
+            </div>
+        </section>
+
+        <section id="education" class="education container scroll-reveal">
+            <h2>Education</h2>
+            <div class="education-text">
+                <h3>BSc (Hons) in Biomedical Technology</h3>
+                <p>Gampaha Wickramarachchi University of Indigenous Medicine</p>
+                <p><em>Duration: 4 Years – Present | Status: Undergraduate (2nd year Ongoing)</em></p>
+                <p><strong>Relevant Subjects:</strong></p>
+                <ul style="padding-left: 20px;">
+                    <li>Human Anatomy & Physiology</li>
+                    <li>Medical Instrumentation</li>
+                    <li>Biomedical Electronics</li>
+                    <li>Imaging Systems</li>
+                    <li>Clinical Engineering basics</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="training" class="container scroll-reveal" style="padding: 28px 0;">
+            <h2>Practical Training</h2>
+            <div class="skill">
+                <h3 class="skill-name">Nawaloka Hospital Colombo</h3>
+                <ul style="list-style: none; padding: 0; color: var(--muted);">
+                    <li>🏥 Hospital Training</li>
+                    <li>🔬 Lab Practical Sessions</li>
+                    <li>🛠️ Equipment Maintenance Exposure</li>
+                    <li>🩺 Clinical Environment Experience</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="certifications" class="container scroll-reveal" style="padding: 28px 0;">
+            <h2>Certifications & Workshops</h2>
+            <ul style="color: var(--muted); padding-left: 20px;">
+                <li>Biomedical Workshops</li>
+                <li>Safety Training</li>
+                <li>Medical Equipment Handling Courses</li>
+                <li>Online Certifications (Web Development)</li>
+            </ul>
+        </section>
+
+        <section id="soft-skills" class="container scroll-reveal" style="padding: 28px 0;">
+            <h2>Soft Skills</h2>
+            <p style="color: var(--muted);">🗣️ Communication (English, Tamil, Sinhala) • 🤝 Teamwork (Social Services) • 👁️ Attention to Detail • 🛡️ Patient Safety Awareness • ⏳ Time Management</p>
+        </section>
+
+        <section id="contact" class="contact container scroll-reveal">
+            <h2>Contact</h2>
+            <div class="contact-info-display">
+                <p>📧 <a href="mailto:issathulilma4@gmail.com">issathulilma4@gmail.com</a></p>
+                <p>📞 <a href="tel:+94769473921">+94 76 947 3921</a></p>
+                <p>🔗 <a href="https://linkedin.com/in/issathul-ilma" target="_blank">LinkedIn Profile</a></p>
+                <p>📍 Gampaha, Sri Lanka</p>
+            </div>
+            <form class="contact-form">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Send Message</button>
+            </form>
+        </section>
+
+        <div id="project-modal" class="modal" role="dialog" aria-hidden="true" aria-labelledby="modal-title">
+            <div class="modal-content">
+                <button class="modal-close" aria-label="Close project details">✕</button>
+                <img id="modal-img" class="modal-img" src="" alt="" aria-hidden="true">
+                <h3 id="modal-title"></h3>
+                <p id="modal-desc"></p>
+                <div id="modal-links"></div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Issathul Ilma | Biomedical Technology</p>
+        </div>
+    </footer>
+
+    <script src="ilma.js"></script>
+   
+</body>
+</html>

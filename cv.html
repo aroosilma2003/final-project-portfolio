@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV — Issathul Ilma</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:ital@0;1&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --accent: #2563eb;
+            --text: #374151;
+            --text-light: #6b7280;
+            --bg: #f3f4f6;
+        }
+        
+        * { box-sizing: border-box; }
+        
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 40px 20px;
+            -webkit-print-color-adjust: exact;
+        }
+
+        .cv-paper {
+            background: white;
+            width: 100%;
+            max-width: 210mm; /* A4 width */
+            min-height: 297mm;
+            margin: 0 auto;
+            padding: 50px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            position: relative;
+        }
+
+        /* Header */
+        .cv-header {
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 2px solid #f0f0f0;
+            padding-bottom: 30px;
+            margin-bottom: 35px;
+        }
+        
+        .header-main h1 {
+            margin: 0;
+            font-size: 2.4rem;
+            color: var(--primary);
+            letter-spacing: -0.5px;
+        }
+        
+        .header-main .role {
+            margin: 5px 0 0;
+            font-size: 1.1rem;
+            color: var(--accent);
+            font-weight: 500;
+        }
+
+        .contact-details {
+            text-align: right;
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+        
+        .contact-details p { margin: 2px 0; }
+
+        /* Sections */
+        .cv-section { margin-bottom: 35px; }
+        
+        .section-title {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            color: var(--text-light);
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        /* Content Items */
+        .cv-item { margin-bottom: 20px; }
+        
+        .cv-item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 5px;
+        }
+        
+        .cv-item h3 {
+            margin: 0;
+            font-size: 1.1rem;
+            color: var(--primary);
+            font-weight: 600;
+        }
+        
+        .cv-item .date {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            font-feature-settings: "tnum";
+        }
+        
+        .cv-item .subtitle {
+            font-size: 0.95rem;
+            color: var(--accent);
+            margin-bottom: 8px;
+            display: block;
+            font-weight: 500;
+        }
+
+        .cv-item ul {
+            margin: 5px 0 0;
+            padding-left: 18px;
+            color: #4b5563;
+        }
+        
+        .cv-item li { margin-bottom: 4px; }
+
+        /* Skills Grid */
+        .skills-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        
+        .skill-category strong {
+            display: block;
+            color: var(--primary);
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+        }
+        
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        
+        .tag {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            color: #475569;
+        }
+
+        /* Print Button */
+        .fab-print {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--primary);
+            color: white;
+            border: none;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            transition: transform 0.2s;
+        }
+        
+        .fab-print:hover { transform: scale(1.1); }
+
+        /* Print Media Query */
+        @media print {
+            body { background: white; padding: 0; }
+            .cv-paper {
+                box-shadow: none;
+                margin: 0;
+                padding: 40px;
+                width: 100%;
+                max-width: 100%;
+            }
+            .fab-print { display: none; }
+        }
+
+        @media (max-width: 600px) {
+            .cv-header { flex-direction: column; gap: 20px; }
+            .contact-details { text-align: left; }
+            .cv-paper { padding: 30px; height: auto; }
+            .skills-container { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <button class="fab-print" onclick="window.print()" title="Print / Download PDF">🖨️</button>
+
+    <div class="cv-paper">
+        <header class="cv-header">
+            <div class="header-main">
+                <h1>Issathul Ilma</h1>
+                <p class="role">Biomedical Technology Student</p>
+            </div>
+            <div class="contact-details">
+                <p>issathulilma4@gmail.com</p>
+                <p>+94 76 947 3921</p>
+                <p>linkedin.com/in/issathul-ilma</p>
+                <p>Gampaha, Sri Lanka</p>
+            </div>
+        </header>
+
+        <section class="cv-section">
+            <div class="section-title">Profile</div>
+            <p>I am an undergraduate student at Gampaha Wickramarachchi University of Indigenous Medicine, pursuing a degree in Biomedical Technology. I’m deeply passionate about integrating traditional medicine with modern biomedical innovations to improve patient care and diagnostics. Throughout my academic journey, I’ve developed skills in medical instrumentation, biosignal processing, and laboratory techniques. I’m enthusiastic about contributing to the field through research, practical projects, and interdisciplinary collaboration—striving to make a meaningful impact in healthcare through technology.</p>
+            <p style="margin-top: 10px;"><strong>Interests:</strong> Medical devices, Healthcare technology, Lab instruments / diagnostics</p>
+        </section>
+
+        <section class="cv-section">
+            <div class="section-title">Education</div>
+            <div class="cv-item">
+                <div class="cv-item-header">
+                    <h3>BSc (Hons) in Biomedical Technology</h3>
+                    <span class="date">4 Year – Present</span>
+                </div>
+                <span class="subtitle">Gampaha Wickramarachchi University of Indigenous Medicine</span>
+                <p class="date">Undergraduate (2nd year Ongoing)</p>
+                <ul>
+                    <li>Human Anatomy & Physiology</li>
+                    <li>Medical Instrumentation</li>
+                    <li>Biomedical Electronics</li>
+                    <li>Imaging Systems</li>
+                    <li>Clinical Engineering basics</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="cv-section">
+            <div class="section-title">Skills</div>
+            <div class="skills-container">
+                <div class="skill-category">
+                    <strong>Medical & Biomedical Skills</strong>
+                    <div class="skill-tags">
+                        <span class="tag">Medical Instrumentation</span>
+                        <span class="tag">Biosignal Processing</span>
+                        <span class="tag">Patient Monitoring</span>
+                        <span class="tag">Imaging Systems</span>
+                        <span class="tag">Lab Equipment</span>
+                        <span class="tag">Calibration & Safety</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <strong>Technical & Engineering</strong>
+                    <div class="skill-tags">
+                        <span class="tag">Circuit Design</span>
+                        <span class="tag">Arduino</span>
+                        <span class="tag">MS Office</span>
+                        <span class="tag">Data Analysis</span>
+                        <span class="tag">Web Development</span>
+                        <span class="tag">Troubleshooting</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cv-section">
+            <div class="section-title">Practical Training</div>
+            <div class="cv-item">
+                <div class="cv-item-header">
+                    <h3>Hospital Training</h3>
+                    <span class="date">Nawaloka Hospital Colombo</span>
+                </div>
+                <ul>
+                    <li>Lab practical sessions</li>
+                    <li>Equipment maintenance exposure</li>
+                    <li>Clinical environment experience</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="cv-section">
+            <div class="section-title">Projects</div>
+            <div class="cv-item">
+                <div class="cv-item-header">
+                    <h3>Biomedical Instrumentation Prototype</h3>
+                    <span class="date">Academic Project</span>
+                </div>
+                <p>Designed a basic circuit for signal amplification and processing using operational amplifiers.</p>
+                <ul>
+                    <li><strong>Tools:</strong> Circuit Design, Oscilloscope, Multisim</li>
+                    <li><strong>Outcome:</strong> Successfully amplified biosignals with minimal noise interference.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="cv-section">
+            <div class="section-title">Certifications & Workshops</div>
+            <ul>
+                <li>Biomedical workshops</li>
+                <li>Safety training</li>
+                <li>Medical equipment handling courses</li>
+                <li>Online certifications (Web development)</li>
+            </ul>
+        </section>
+
+        <section class="cv-section">
+            <div class="section-title">Soft Skills</div>
+            <div class="skills-container">
+                <div class="skill-category">
+                    <div class="skill-tags">
+                        <span class="tag">Communication (English, Tamil, Sinhala)</span>
+                        <span class="tag">Teamwork (Social Services)</span>
+                        <span class="tag">Attention to Detail</span>
+                        <span class="tag">Patient Safety Awareness</span>
+                        <span class="tag">Time Management</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
